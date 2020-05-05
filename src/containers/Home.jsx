@@ -8,23 +8,21 @@ import CarrouselItem from "../components/CarrouselItem";
 import "../assets/styles/App.scss";
 
 const Home = ({myList, trends, originals}) => {
-
-    
-  return(
+  return (
     <>
       <Search />
 
-      {myList.length > 0 && (
+      {myList.length > 0 &&
         <Categories title="Mi lista">
           <Carrousel>
             {
-                trends.map((item) => (
+                myList.map((item) => (
                     <CarrouselItem key={item.id} {...item} />
                   ))
             }
           </Carrousel>
         </Categories>
-      )}
+      }
 
       <Categories title="Tendencias">
         <Carrousel>
